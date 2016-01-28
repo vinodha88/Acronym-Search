@@ -97,12 +97,7 @@
 
     testTableCellView.detailTextLabel.text  = [NSString stringWithFormat:@"Frequency : %@                              Since :%@",[cellValue valueForKey:@"freq"],[cellValue valueForKey:@"since"]];
     testTableCellView.detailTextLabel.textColor = [UIColor blueColor];
-    testTableCellView.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return testTableCellView;
-}
-
-- (void)tableView:(UITableView *)iTableView didSelectRowAtIndexPath:(NSIndexPath *)iIndexPath {
-    NSLog(@"Hello");
 }
 
 //Text Feild Delegate
@@ -123,25 +118,20 @@
     return  self.seacrhOptionArray.count;
 }
 
-/*- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return self.seacrhOptionArray[row];
-}*/
-
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     UILabel* lbl = (UILabel*)view;
    
     // Customise Font
     if (lbl == nil) {
         //label size
-        CGRect frame = CGRectMake(0.0, 0.0, 70, 30);
+        CGRect frame = CGRectMake(0.0, 0.0, 100, 50);
         lbl = [[UILabel alloc] initWithFrame:frame];
         [lbl setBackgroundColor:[UIColor clearColor]];
-        //here you can play with fonts
-        [lbl setFont:[UIFont fontWithName:@"Times New Roman" size:14.0]];
+        [lbl setFont:[UIFont systemFontOfSize:14]];
         
+        lbl.textAlignment = NSTextAlignmentCenter;
     }
-    //picker view array is the datasource
+    
     [lbl setText:[self.seacrhOptionArray objectAtIndex:row]];
     
     return lbl;
