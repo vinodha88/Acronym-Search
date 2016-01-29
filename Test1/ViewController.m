@@ -127,7 +127,7 @@
         CGRect frame = CGRectMake(0.0, 0.0, 100, 50);
         lbl = [[UILabel alloc] initWithFrame:frame];
         [lbl setBackgroundColor:[UIColor clearColor]];
-        [lbl setFont:[UIFont systemFontOfSize:14]];
+        [lbl setFont:[UIFont fontWithName:@"Times New Roman" size:14.0]];
         
         lbl.textAlignment = NSTextAlignmentCenter;
     }
